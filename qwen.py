@@ -3,6 +3,7 @@ from pathlib import Path
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from folder_paths import models_dir
 from comfy import model_management, model_patcher
+from .utils import set_seed
 
 # init
 qwen_model_folder_path = Path(models_dir) / 'qwen'
@@ -68,6 +69,7 @@ class QwenPackQA:
                 "qwen_model": ("QWEN_MODEL",),
                 "system_instruction": ("STRING", {"default": DEFAULT_INSTRUCT, "multiline": True}),
                 "user_prompt": ("STRING", {"default": "", "multiline": True}),
+                "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
             },
             "optional": {
                 "a": ("STRING", {"defaultInput": True,}),
@@ -84,7 +86,8 @@ class QwenPackQA:
     CATEGORY = "qwen_pack"
 
 
-    def generate(self, qwen_model, system_instruction, user_prompt, **kwargs):
+    def generate(self, qwen_model, system_instruction, user_prompt, seed, **kwargs):
+        set_seed(seed % 9999999)
         messages = [
             {"role": "system", "content": system_instruction},
             {"role": "user", "content": user_prompt.format(**kwargs)},
