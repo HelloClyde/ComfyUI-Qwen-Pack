@@ -11,6 +11,8 @@
 ## 使用说明
 qwen模型需要放在models/qwen/下面，比如: models/qwen/Qwen2-7B-Instruct
 
+qwen-vl模型需要放在models/qwen-vl/下面，比如models/qwen-vl/Qwen2-VL-7B-Instruct
+
 模型可以去huggingface下载：
 
 [qwen2.5](https://huggingface.co/collections/Qwen/qwen25-66e81a666513e518adb90d9e)
