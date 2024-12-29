@@ -1,4 +1,4 @@
-# ComfyUI-QWen-Pack
+# ComfyUI-Qwen-Pack
 
 通义千问LM和VLM的ComfyUI自定义节点
 ![snap](./assert/snap.png)
