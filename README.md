@@ -1,8 +1,12 @@
 # ComfyUI-Qwen-Pack
 
 通义千问LM和VLM的ComfyUI自定义节点
+
 ![翻译](./assert/snap1.png)
+
 ![提示词反推](./assert/snap2.png)
+
+![多图片问答](./assert/snap3.png)
 
 ## 使用说明
 qwen模型需要放在models/qwen/下面，比如: models/qwen/Qwen2-7B-Instruct
