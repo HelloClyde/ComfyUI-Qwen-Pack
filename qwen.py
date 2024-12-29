@@ -170,7 +170,7 @@ class QwenPackVQA:
             "required": {
                 "qwen_vl_model": ("QWEN_VL_MODEL",),
                 "images": ("IMAGE", {}),
-                "user_prompt": ("STRING", {"default": "Describe this image.", "multiline": True}),
+                "user_prompt": ("STRING", {"default": "describe this image, within 50 words", "multiline": True}),
                 "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                 "max_resolution": ("INT", {"default": 512, "min": 1, "max": 4096}),
                 "max_tokens": ("INT", {"default": 512, "min": 0, "max": 0xffffffffffffffff}),
